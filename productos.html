@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PRODUCTOS</title>
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Latest compiled and minified CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Latest compiled JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- TEMPLETE ADMIN -->
+    <link href="css/app.css" rel="stylesheet">
+    <!-- DATA TABLES -->
+    <link href="https://cdn.datatables.net/1.11.3/css/dataTables.bootstrap5.min.css" rel="stylesheet">
+    <script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.11.3/js/dataTables.bootstrap5.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.11.3/css/dataTables.bootstrap4.min.css">
+    <!-- FUENTES -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <script src="js/app.js"></script>
+    <script src="js/productos.js"></script>
+</head>
+
+<body>
+    <div class="wrapper">
+        <!-- MI NAV VERTICAL-->
+        <nav id="sidebar" class="sidebar js-sidebar">
+
+            <div class="sidebar-content js-simplebar">
+
+                <a class="sidebar-brand" href="index.html"><span class="align-middle">Perfil Admin</span></a>
+
+                <ul class="sidebar-nav">
+                    <li class="sidebar-header">Servicios</li>
+                    <li class="sidebar-item "><a class="sidebar-link" href="perfilAdmin.html"><i class="align-middle" data-feather="sliders"></i> <span class="align-middle">Administrar usuarios</span></a></li>
+                    <li class="sidebar-item active"><a class="sidebar-link" href="productos.html"><i class="align-middle" data-feather="sliders"></i> <span class="align-middle">Administrar productos</span></a></li>
+                </ul>
+
+            </div>
+
+        </nav>
+        <!-- FIN MI NAV -->
+        <div class="main">
+            <!-- MENU SUPERIOR -->
+            <nav class="navbar navbar-expand navbar-light navbar-bg">
+                <a class="sidebar-toggle js-sidebar-toggle"><i class="hamburger align-self-center"></i></a>
+
+                <div class="navbar-collapse collapse">
+                    <ul class="navbar-nav navbar-align">
+                        <a class="nav-link dropdown-toggle d-none d-sm-inline-block" href="#" data-bs-toggle="dropdown">
+                            <img src="img/computer cloud.png" class="avatar img-fluid rounded me-1" alt="Charles Hall" /> <span class="text-dark miNombreUsuario">Charles Hall</span>
+                        </a>
+                    </ul>
+                </div>
+            </nav>
+            <!-- FIN MENU SUPERIOR -->
+            <main class="content">
+                <h1>Productos</h1>
+                <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#modalAddProduct"> Agregar Producto </button>
+                <br>
+                <br>
+                
+                <!--Tabla Productos-->
+                <div class="adminProducto">
+                    <table id="tablaProductos" class="table table-striped" style="width:100%">
+
+                        <thead>
+                            <tr>
+                                <th>Id</th>
+                               <th>Model</th>
+                                <th>Procesor</th>
+                                <th>Os</th>
+                                <th>Description</th>
+                                <th>Memory</th>
+                                <th>HardDrive</th>
+                                <th>Availability</th>
+                                <th>Price</th>
+                                <th>Quantity</th>
+                                <th>Photography</th>
+                                <th>Acciones</th>
+                                
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <tr>
+                                    <th>Id</th>
+                                    <th>Brand</th>
+                                    <th>Procesor</th>
+                                    <th>Os</th>
+                                    <th>Description</th>
+                                    <th>Memory</th>
+                                    <th>HardDrive</th>
+                                    <th>Availability</th>
+                                    <th>Price</th>
+                                    <th>Quantity</th>
+                                    <th>Photography</th>
+                                    <th>Acciones</th>
+                                </tr>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+            </main>
+        </div>
+        <!-- The Modal -->
+        <div class="modal fade" id="modalAddProduct">
+            <div class="modal-dialog">
+                <div class="modal-content">
+
+                    <!-- Modal Header -->
+                    <div class="modal-header">
+                        <h4 class="modal-title">AGREGAR PRODUCTO</h4>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+
+                    <!-- Modal body -->
+                    <div class="modal-body">
+                        <label for="usr">id:</label>
+                        <input type="number" class="form-control" id="id" name="id">
+
+                        <label for="usr">Brand:</label>
+                        <input type="text" class="form-control" id="brand" name="brand">
+
+                        <label for="usr">Procesor:</label>
+                        <input type="text" class="form-control" id="procesor" name="procesor">
+
+                        <label for="usr">Os:</label>
+                        <input type="text" class="form-control" id="os" name="os">
+
+                        <label for="usr">Description:</label>
+                        <input type="text" class="form-control" id="description" name="description">
+
+                        <label for="usr">memory:</label>
+                        <input type="text" class="form-control" id="memory" name="memory">
+
+                        <label for="usr">HardDrive:</label>
+                        <input type="text" class="form-control" id="hardDrive" name="hardDrive">
+                        
+                        <br>
+                        <select id="availability">
+                            <option value="" disabled selected>Disponibilidad</option>
+                            <option value="true">DISPONIBLE</option>
+                            <option value="false">NO DISPONIBLE</option>
+                        </select>
+                        <br>
+                        
+                        <label for="usr">Price:</label>
+                        <input type="text" class="form-control" id="price" name="price">
+
+                        <label for="usr">Quantity:</label>
+                        <input type="text" class="form-control" id="quantity" name="quantity">
+
+                        <label for="usr">Photography:</label>
+                        <input type="text" class="form-control" id="photography" name="photography">
+
+                        <!-- MI ALERT -->
+                        <p style="color: red;" class="alertaRegistro"></p>
+                        <button type="button" class="btn btn-primary btn_agregarProductos">Agregar Producto</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <!-- The Modal -->
+        <div class="modal fade" id="modalEditProduct">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    
+
+                    <!-- Modal Header -->
+                    <div class="modal-header">
+                        <h4 class="modal-title">EDITAR PRODUCTO</h4>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+
+                    <!--
+                       {
+                        "id": 1,
+                        "brand": "HP",
+                        "procesor": "CORE I7",
+                        "os": "Win10",
+                        "description": "Super equipo",
+                        "memory": "16gb",
+                        "hardDrive": "2T",
+                        "availability": true,
+                        "price": 150000,
+                        "quantity": 10,
+                        "photography": ""
+                        }
+                                        -->
+                    <!-- Modal body -->
+                    <div class="modal-body">
+                        <label for="usr">Id:</label>
+                        <input type="text" class="form-control" id="id_e" name="id">
+
+                        <label for="usr">Brand:</label>
+                        <input type="text" class="form-control" id="brand_e" name="brand">
+
+                        <label for="usr">Procesor:</label>
+                        <input type="text" class="form-control" id="procesor_e" name="procesor">
+
+                        <label for="usr">Os:</label>
+                        <input type="text" class="form-control" id="os_e" name="os">
+
+                        <label for="usr">Description:</label>
+                        <input type="text" class="form-control" id="description_e" name="description">
+
+                        <label for="usr">Memory:</label>
+                        <input type="text" class="form-control" id="memory_e" name="memory">
+
+                        <label for="usr">HardDrive:</label>
+                        <input type="text" class="form-control" id="hardDrive_e" name="hardDrive">
+
+                        <select id="availability_e">
+                            <option value="" disabled selected>Disponibilidad</option>
+                            <option value="true">DISPONIBLE</option>
+                            <option value="false">NO DISPONIBLE</option>
+                        </select>
+
+                        <label for="usr">Price:</label>
+                        <input type="text" class="form-control" id="price_e" name="price">
+
+                        <label for="usr">Quantity:</label>
+                        <input type="text" class="form-control" id="quantity_e" name="quantity">
+
+                        <label for="usr">Photography:</label>
+                        <input type="text" class="form-control" id="photography_e" name="photography">
+                        
+                        <!-- MI ALERT -->
+                        <p style="color: red;" class="alertaRegistro"></p>
+                        <button type="button" class="btn btn-primary btn_editarProducto">Editar Producto</button>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+</body>
+
+</html>
